@@ -9,7 +9,7 @@ get_header();
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-
+		<h1>Archive Projects</h1>
         <?php
         $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         $args = array(
@@ -32,12 +32,20 @@ get_header();
                     </div><!-- .entry-content -->
                 </article><!-- #post-<?php the_ID(); ?> -->
                 <?php
-            endwhile;
+            endwhile; ?>
+			
+			<div class="pagnation">
+			
+			<?php 
 
             // Pagination
             echo paginate_links( array(
                 'total' => $projects_query->max_num_pages,
-            ) );
+            ) ); ?>
+			
+			</div>
+			
+			<?php 
 
             wp_reset_postdata();
         else :
@@ -47,6 +55,12 @@ get_header();
 
     </main><!-- #main -->
 </div><!-- #primary -->
+<style>
+.pagnation{
+    display: inline-block;
+    width: 100%;
+	}
+</style>
 
 <?php
 get_footer();
