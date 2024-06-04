@@ -192,17 +192,17 @@ require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-functions.php';
  * Function to check if the user's IP address starts with '77.29'.
  */
 function check_ip_and_redirect() {
-    // Get the user's IP address.
+   
    $ipAdress = $_SERVER['REMOTE_ADDR'];
 	
 
-    // here we define IP starts with
+   
     $ipStart = '77.29';
 
-    // Check if the user's IP address starts with the specified prefix.
+   
     if (strpos($ipAdress, $ipStart) === 0) {
-        // IP address matches the prefix, perform the redirection.
-        wp_redirect('https://google.com/'); // Replace with your desired redirect URL.
+       
+        wp_redirect('https://google.com/'); 
         exit;
     }
 }
@@ -210,8 +210,7 @@ add_action('template_redirect', 'check_ip_and_redirect');
 
 
 
-//code to create custompost type with taxonomy
-// Register Custom Post Type for Projects
+
 function custom_project_post_type() {
 
     $labels = array(
@@ -268,7 +267,7 @@ function custom_project_post_type() {
 }
 add_action( 'init', 'custom_project_post_type', 0 );
 
-// Register Custom Taxonomy for Project Types
+
 function custom_project_type_taxonomy() {
 
     $labels = array(
@@ -375,11 +374,11 @@ function display_architecture_projects_shortcode() {
     ob_start(); // Start output buffering
     ?>
     <div id="projects-container">
-        <!-- Projects will be dynamically inserted here -->
+        
     </div>
 	
 	<div id="json-container">
-        <!-- Projects will be dynamically inserted here -->
+       
     </div>
     <script>
     jQuery(document).ready(function($) {
